@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: single
 title: HoaK
 author_profile: true
 ---
