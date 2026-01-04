@@ -22,7 +22,7 @@ Hyderabad ➝ USA
 
   <div class="store-badges">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Download_on_the_App_Store_Badge.svg">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
   </div>
 
 </div>
