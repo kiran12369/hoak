@@ -2,24 +2,18 @@
 layout: single
 title: HoaK
 author_profile: true
+sidebar: true
 ---
 
-# Welcome to HoaK
+# HoaK
 
-HoaK is a smart cross-border commerce platform that enables
-affordable bulk-consolidated shipping from Hyderabad to the USA.
+Smart cross-border commerce platform  
+Hyderabad ➝ USA
 
-## 🚀 Why HoaK
-- Saves cost through consolidation
-- Faster delivery cycles
-- Access to authentic Indian products
-- Convenient ordering & delivery
+<p>
+  <a href="/files/hoak-app.apk" class="btn btn--primary btn--large">
+    📲 Download APK
+  </a>
+</p>
 
-## 🧩 Phase-1 Product Categories
-- Pooja items
-- Household essentials
-- Limited bangles (pilot phase)
-
-## 🌍 Our Mission
-To make cross-border shopping easier, affordable, and reliable
-for Indian diaspora families in the USA.
+<p><em>Coming Soon — Play Store & App Store</em></p>
