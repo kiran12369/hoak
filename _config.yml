@@ -26,9 +26,9 @@ author:
   # Biographic information
   avatar           : "https://raw.githubusercontent.com/kiran12369/hoak.testgithub.io/refs/heads/master/images/HoaK.jpeg"
   name             : "The HoaK"
-  pronouns         : #  
+  pronouns         : # URL
   bio              : "HoaK - Smart Cross-Boarder commerce solution"
-  location         : "INDIA"
+  location         : # URL
   uri              : # URL
   email            : "thehoak@outlook.com" 
 
@@ -51,7 +51,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : # Username
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
