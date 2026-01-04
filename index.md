@@ -1,6 +1,7 @@
 ---
 layout: home
 title: HoaK
+author_profile: true
 ---
 
 # Welcome to HoaK
