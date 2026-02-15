@@ -7,10 +7,10 @@ sidebar: true
 
 
 Smart cross-border commerce platform  
-Hyderabad ➝ USA
+MADE IN INDIA FOR INDIA
 
 <div class="hero">
-  <p class="tagline">Smart cross-border commerce platform from Hyderabad to USA</p>
+  <p class="tagline">Personalised shopping app</p>
 
   <h2 class="coming-soon">COMING SOON</h2>
 
