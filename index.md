@@ -6,7 +6,7 @@ sidebar: true
 ---
 
 
-Smart cross-border commerce platform  
+Smart  e-commerce platform  
 MADE IN INDIA FOR INDIA
 
 <div class="hero">
