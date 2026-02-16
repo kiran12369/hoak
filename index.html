@@ -7,7 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-</style>
+<style>
 :root {
   --bg: #0b0d12;
   --card: #121520;
@@ -127,17 +127,15 @@ nav {
   padding: 160px 20px 120px;
   animation: fadeUp 1s ease;
 }
-<section id="about" class="info-section hidden">
+<section id="about" class="hidden-section">
   <h2>About Hoak</h2>
-  <p>
-    Hoak is a smart, personalised e-commerce platform built in India, for India.
-    It understands user preferences, shopping behavior, and local needs to
-    deliver a faster, smarter, and more relevant shopping experience.
-  </p>
+  <p>HoaK is a smart personalised e-commerce platform ...</p>
 </section>
 
-<section id="founder" class="info-section hidden">
+<section id="founder" class="hidden-section">
   <h2>About the Founder</h2>
+  <p>Ravikiran is the Founder & CEO ...</p>
+</section>
   <p>
     Ravikiran is the Founder & CEO of Hoak. Driven by a vision to redefine
     e-commerce for Indian consumers, he focuses on building technology that
@@ -253,6 +251,38 @@ footer {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Hidden sections (About Hoak & Founder) */
+.hidden-section {
+  display: none;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.hidden-section h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.hidden-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 </head>
 
