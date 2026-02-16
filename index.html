@@ -361,6 +361,28 @@ function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
 </script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("open");
+  }
+
+  function showSection(id) {
+    // hide all hidden sections
+    document.querySelectorAll(".hidden-section").forEach(sec => {
+      sec.style.display = "none";
+    });
+
+    // show selected section
+    const target = document.getElementById(id);
+    if (target) {
+      target.style.display = "block";
+    }
+
+    // close menu after click
+    document.getElementById("menu").classList.remove("open");
+  }
+</script>
 
 </body>
 </html>
