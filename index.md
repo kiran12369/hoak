@@ -107,3 +107,9 @@ body {
   }
 }
 </style>
+header,
+.site-header,
+.masthead,
+.navbar {
+  display: none !important;
+}
