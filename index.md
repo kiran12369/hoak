@@ -3,54 +3,55 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>HoaK – Smart E-commerce for India</title>
+<title>HoaK — Smart E-commerce for India</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #0b0d12;
-  --card: #121520;
-  --primary: #7b2ff7;
-  --secondary: #00c6ff;
+  --bg: #0a0c10;
+  --panel: #11141c;
   --text: #ffffff;
-  --muted: #9aa0b4;
+  --muted: #9aa3b2;
+  --accent: #d4b36a;
+  --line: rgba(255,255,255,0.08);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background: radial-gradient(1200px 600px at 50% -10%, #1a1d2e, var(--bg));
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(900px 500px at 50% -20%, #1a1f2e, var(--bg));
   color: var(--text);
   overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   position: fixed;
-  width: 100%;
   top: 0;
-  padding: 20px 32px;
+  width: 100%;
+  padding: 22px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(10,12,16,0.7);
   backdrop-filter: blur(14px);
-  background: rgba(11,13,18,0.6);
+  border-bottom: 1px solid var(--line);
   z-index: 1000;
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 800;
 }
 
 .logo span {
-  color: #d4b36a;
+  color: var(--accent);
 }
 
 .menu-btn {
@@ -58,105 +59,88 @@ nav {
   cursor: pointer;
 }
 
-/* SIDE MENU */
+/* MENU */
 .menu {
   position: fixed;
-  top: 0;
-  right: -100%;
-  width: 320px;
-  height: 100%;
-  background: var(--card);
-  padding: 40px;
+  inset: 0;
+  background: rgba(10,12,16,0.92);
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
   transition: 0.4s ease;
   z-index: 2000;
 }
 
 .menu.active {
-  right: 0;
-}
-
-.menu h3 {
-  margin-bottom: 24px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .menu a {
-  display: block;
-  margin: 18px 0;
-  color: var(--text);
+  font-size: 32px;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 18px;
+  color: var(--text);
 }
 
 .menu a:hover {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 /* HERO */
 .hero {
+  padding: 200px 24px 140px;
   text-align: center;
-  padding: 160px 20px 120px;
-  animation: fadeUp 1s ease;
-}
-
-.badge {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  margin-bottom: 24px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
 }
 
 .hero h1 {
-  font-size: clamp(56px, 8vw, 96px);
+  font-size: clamp(64px, 10vw, 120px);
   font-weight: 900;
+  letter-spacing: -0.04em;
 }
 
 .hero h1 span {
-  color: #d4b36a;
+  color: var(--accent);
 }
 
 .hero p {
-  max-width: 520px;
-  margin: 24px auto 48px;
+  max-width: 620px;
+  margin: 32px auto 56px;
+  font-size: 20px;
   color: var(--muted);
-  font-size: 18px;
+  line-height: 1.6;
 }
 
-.coming {
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 900;
-  background: linear-gradient(90deg,var(--primary),var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 48px;
-}
-
-/* BUTTONS */
 .buttons {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
 .buttons a {
-  padding: 14px 26px;
+  padding: 16px 28px;
   border-radius: 14px;
-  text-decoration: none;
   font-weight: 600;
-  background: linear-gradient(90deg,var(--primary),var(--secondary));
-  color: #fff;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  transition: 0.3s ease;
 }
 
-.buttons a.secondary {
-  background: rgba(255,255,255,0.08);
+.buttons a.primary {
+  border-color: var(--accent);
 }
 
 .buttons a:hover {
   transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 /* SECTIONS */
@@ -166,36 +150,30 @@ section {
   padding: 0 24px;
 }
 
-.card {
-  background: rgba(255,255,255,0.04);
-  border-radius: 24px;
-  padding: 48px;
-  backdrop-filter: blur(20px);
-  animation: fadeUp 1.2s ease;
+.block {
+  border-top: 1px solid var(--line);
+  padding-top: 60px;
 }
 
-.card h2 {
-  font-size: 36px;
+.block h2 {
+  font-size: 42px;
   margin-bottom: 24px;
 }
 
-.card p {
-  color: var(--muted);
+.block p {
+  max-width: 720px;
+  font-size: 18px;
   line-height: 1.7;
-  font-size: 17px;
+  color: var(--muted);
 }
 
 /* FOOTER */
 footer {
+  border-top: 1px solid var(--line);
+  padding: 60px 24px;
   text-align: center;
-  padding: 60px 20px;
   color: var(--muted);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  font-size: 14px;
 }
 </style>
 </head>
@@ -208,56 +186,55 @@ footer {
 </nav>
 
 <div class="menu" id="menu">
-  <h3>Menu</h3>
-  <a href="#shopper">Join us as a Shopper</a>
-  <a href="#about">About HoaK</a>
-  <a href="#founder">About Founder</a>
-  <a href="mailto:contact@hoak.in">Help</a>
+  <a href="#about" onclick="toggleMenu()">About HoaK</a>
+  <a href="#founder" onclick="toggleMenu()">Founder</a>
+  <a href="mailto:thehoak@outlook.com">Help</a>
+  <a href="#join" onclick="toggleMenu()">Join as Shopper</a>
 </div>
 
 <section class="hero">
-  <div class="badge">MADE IN INDIA 🇮🇳 FOR INDIA</div>
   <h1>Hoa<span>K</span></h1>
-  <p>Smart personalised e-commerce platform designed for the Indian consumer.</p>
-  <div class="coming">Coming Soon</div>
+  <p>
+    A smart, personalised e-commerce platform built in India,
+    designed for how Indians actually shop.
+  </p>
 
   <div class="buttons">
-    <a href="#">Google Play</a>
+    <a class="primary" href="#">Google Play</a>
     <a href="#">App Store</a>
-    <a class="secondary" href="#">Download APK</a>
+    <a href="#">Download APK</a>
   </div>
 </section>
 
 <section id="about">
-  <div class="card">
+  <div class="block">
     <h2>About HoaK</h2>
     <p>
-      HoaK is a next-generation smart e-commerce platform focused on personalised,
-      intelligent, and trust-driven shopping experiences. Built in India for Indian
-      consumers, HoaK blends technology, simplicity, and discovery to redefine how
-      people shop online.
+      HoaK is a next-generation e-commerce platform focused on intelligent discovery,
+      personalization, and trust. Instead of endless scrolling, HoaK helps users find
+      what truly fits them — faster, simpler, and smarter.
     </p>
   </div>
 </section>
 
 <section id="founder">
-  <div class="card">
-    <h2>About the Founder</h2>
+  <div class="block">
+    <h2>Founder</h2>
     <p>
-      <strong>Ravikiran</strong> is the Founder & CEO of HoaK. Driven by a vision to build
-      meaningful technology for everyday Indians, he focuses on creating products
-      that balance innovation, usability, and real-world impact.
+      <strong>Ravikiran</strong> is the Founder & CEO of HoaK. With a focus on building
+      meaningful consumer technology, he is driven to create platforms that combine
+      simplicity, intelligence, and real impact for everyday users.
     </p>
   </div>
 </section>
 
 <footer>
-  © 2026 HoaK. All rights reserved.
+  © 2026 HoaK. Made in India 🇮🇳
 </footer>
 
 <script>
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+  document.getElementById('menu').classList.toggle('active');
 }
 </script>
 
