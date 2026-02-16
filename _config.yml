@@ -5,7 +5,7 @@ locale: "en-IN"
 title: "HoaK"
 description: "HoaK – Smart personalised e-commerce platform made in India for India"
 baseurl: ""
-url: "https://hoak.in"   # change when domain is final
+url: "https://thehoak.com/"   # change when domain is final
 timezone: Asia/Kolkata
 encoding: "utf-8"
 
