@@ -106,3 +106,7 @@ defaults:
 # =========================
 plugins:
   - 
+footer:
+  links: []
+atom_feed:
+  hide: true
