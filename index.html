@@ -203,19 +203,20 @@ footer {
 <body>
 
 <nav>
-  <div class="logo">Hoa<span>K</span></div>
+  <a href="#home" class="logo">Hoa<span>K</span></a>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </nav>
 
-<div class="menu" id="menu">
+  <div class="menu" id="menu">
   <h3>Menu</h3>
-  <a href="#shopper">Join us as a Shopper</a>
-  <a href="#about">About HoaK</a>
-  <a href="#founder">About Founder</a>
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#shopper" onclick="toggleMenu()">Join us as a Shopper</a>
+  <a href="#about" onclick="toggleMenu()">About Hoak</a>
+  <a href="#founder" onclick="toggleMenu()">About Founder</a>
   <a href="mailto:contact@hoak.in">Help</a>
 </div>
 
-<section class="hero">
+<section class="hero" id="home">
   <div class="badge">MADE IN INDIA 🇮🇳 FOR INDIA</div>
   <h1>Hoa<span>K</span></h1>
   <p>Smart personalised e-commerce platform designed for the Indian consumer.</p>
