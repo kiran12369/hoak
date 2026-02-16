@@ -1,1 +1,111 @@
+# =========================
+# BASIC SITE SETTINGS
+# =========================
+locale: "en-IN"
+title: "HoaK"
+description: "HoaK – Smart personalised e-commerce platform made in India for India"
+baseurl: ""
+url: "https://hoak.in"   # change when domain is final
+timezone: Asia/Kolkata
+encoding: "utf-8"
+
+# =========================
+# BRANDING
+# =========================
+name: "HoaK"
+logo: "/images/HoaK.jpeg"
+
+# =========================
+# AUTHOR / FOUNDER
+# =========================
+author:
+  name: "Ravikiran"
+  bio: "Founder & CEO at HoaK"
+  avatar: "/images/HoaK.jpeg"
+  email: "thehoak@outlook.com"
+
+# Disable sidebar author clutter
+display_author: false
+
+# =========================
+# THEME / LAYOUT
+# =========================
+site_theme: "default"
+breadcrumbs: false
+read_more: "disabled"
+future: true
+
+# =========================
+# SEO
+# =========================
+google_site_verification:
+bing_site_verification:
+og_image: "/images/HoaK.jpeg"
+
+# =========================
+# SOCIAL (optional – add later)
+# =========================
+social:
+  type: Organization
+  name: HoaK
+  links: []
+
+# =========================
+# ANALYTICS (add later)
+# =========================
+analytics:
+  provider: false
+
+# =========================
+# MARKDOWN / BUILD
+# =========================
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+# =========================
+# FILE HANDLING
+# =========================
+include:
+  - _pages
+  - images
+  - files
+
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - package.json
+  - package-lock.json
+
+# =========================
+# PERMALINKS
+# =========================
+permalink: pretty
+
+# =========================
+# DEFAULTS
+# =========================
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      sidebar: false
+
+# =========================
+# PLUGINS (GitHub Pages safe)
+# =========================
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jemoji
 
