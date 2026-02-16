@@ -7,7 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-<style>
+</style>
 :root {
   --bg: #0b0d12;
   --card: #121520;
@@ -15,6 +15,36 @@
   --secondary: #00c6ff;
   --text: #ffffff;
   --muted: #9aa0b4;
+  .hidden-section {
+  display: none;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.hidden-section h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.hidden-section p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
 }
 
 * {
@@ -182,6 +212,15 @@ section {
   margin: 120px auto;
   padding: 0 24px;
 }
+<!-- About Hoak -->
+<section id="about" class="hidden-section">
+  <h2>About HoaK</h2>
+  <p>
+    HoaK is a smart personalised e-commerce platform designed for the Indian
+    consumer. Built with a deep focus on trust, simplicity, and intelligent
+    product discovery.
+  </p>
+</section>
 
 .card {
   background: rgba(255,255,255,0.04);
@@ -228,8 +267,8 @@ footer {
   <h3>Menu</h3>
   <a href="#home" onclick="toggleMenu()">Home</a>
   <a href="#shopper" onclick="toggleMenu()">Join us as a Shopper</a>
-  <a href="#about" onclick="toggleMenu()">About Hoak</a>
-  <a href="#founder" onclick="toggleMenu()">About Founder</a>
+<a href="#" onclick="openSection('about')">About Hoak</a>
+<a href="#" onclick="openSection('founder')">About Founder</a>
   <a href="mailto:contact@hoak.in">Help</a>
 </div>
 
@@ -275,6 +314,20 @@ footer {
 
 <script>
 function toggleMenu() {
+  <script>
+  function openSection(id) {
+    document.getElementById('menu').classList.remove('open');
+
+    document.querySelectorAll('.hidden-section').forEach(sec => {
+      sec.style.display = 'none';
+    });
+
+    const section = document.getElementById(id);
+    section.style.display = 'block';
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
   document.getElementById("menu").classList.toggle("active");
 }
 </script>
