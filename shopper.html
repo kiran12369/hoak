@@ -62,6 +62,31 @@
       color: white;
       cursor: pointer;
       background: linear-gradient(90deg,#7b2ff7,#00c6ff);
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .success {
+      display: none;
+      margin-top: 20px;
+      color: #00c6ff;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .error {
+      display: none;
+      margin-top: 20px;
+      color: #ff4d4d;
+      text-align: center;
     }
 
     @keyframes fadeUp {
@@ -82,54 +107,73 @@
     <h1>Join HoaK as a Shopper</h1>
     <p>Be the first to experience personalised shopping.</p>
 
-    <form>
-      <form id="shopperForm">
-  <input id="name" type="text" placeholder="Full Name" required />
-  <input id="mobile" type="tel" placeholder="Mobile Number" required />
-  <input id="city" type="text" placeholder="City" required />
-  <button type="submit">Join Now</button>
-</form>
+    <form id="shopperForm">
+      <input id="name" type="text" placeholder="Full Name" required />
+      <input id="mobile" type="tel" placeholder="Mobile Number" required />
+      <input id="city" type="text" placeholder="City" required />
+      <button id="submitBtn" type="submit">Join Now</button>
+    </form>
 
+    <div class="success" id="successMsg">
+      🎉 Thanks! We saved your information.
+    </div>
+
+    <div class="error" id="errorMsg">
+      Something went wrong. Please try again.
+    </div>
   </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("shopperForm");
-
-  if (!form) {
-    alert("Form not found");
-    return;
-  }
+  const successMsg = document.getElementById("successMsg");
+  const errorMsg = document.getElementById("errorMsg");
+  const submitBtn = document.getElementById("submitBtn");
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
     const data = {
-      name: document.getElementById("name").value,
-      mobile: document.getElementById("mobile").value,
-      city: document.getElementById("city").value
+      name: document.getElementById("name").value.trim(),
+      mobile: document.getElementById("mobile").value.trim(),
+      city: document.getElementById("city").value.trim()
     };
 
     fetch("https://script.google.com/macros/s/AKfycbwGra3-NQgbwOV_XCVb8qtp66GgSWb0iGSUsDOQ1h5X9qWH0RFJz15YWifS2LPsZEg/exec", {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" }
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
-    .then(res => res.json())
-    .then(() => {
-      alert("Thanks! We saved your info 😊");
-      form.reset();
+    .then(response => response.json())
+    .then(result => {
+      if (result.status === "success") {
+        form.reset();
+        successMsg.style.display = "block";
+        errorMsg.style.display = "none";
+      } else {
+        throw new Error("Script error");
+      }
     })
-    .catch(err => {
-      alert("Error saving data — try again");
-      console.error(err);
+    .catch(error => {
+      console.error(error);
+      errorMsg.style.display = "block";
+      successMsg.style.display = "none";
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Join Now";
     });
+
   });
 
 });
 </script>
-
 
 </body>
 </html>
