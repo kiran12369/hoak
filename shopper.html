@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Join as a Shopper | HoaK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      background: #0b0d12;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #121520;
+      padding: 40px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      animation: fadeUp 0.6s ease;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #9aa0b4;
+      margin-bottom: 24px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: none;
+      background: #1b2030;
+      color: white;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: 2px solid #7b2ff7;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(90deg,#7b2ff7,#00c6ff);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Join HoaK as a Shopper</h1>
+    <p>Be the first to experience personalised shopping.</p>
+
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="tel" placeholder="Mobile Number" required />
+      <input type="text" placeholder="City" required />
+      <button type="submit">Join Now</button>
+    </form>
+  </div>
+</body>
+</html>
