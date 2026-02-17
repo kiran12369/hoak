@@ -62,18 +62,41 @@
 </head>
 
 <body>
- <div class="card">
-  <h1>Join HoaK as a Shopper</h1>
-  <p>Be the first to experience personalised shopping.</p>
+  <div class="card">
+    <h1>Join HoaK as a Shopper</h1>
+    <p>Be the first to experience personalised shopping.</p>
 
-  <form action="https://script.google.com/macros/s/AKfycbwnqbZ-wyiEp3K5-UoyJTmd7cxVIeQSgRautY_WbnftvTZTFwJ6W4Qbq-3UMRTd1sA/exec" method="POST">
-    <input name="name" type="text" placeholder="Full Name" required />
-    <input name="mobile" type="tel" placeholder="Mobile Number" required />
-    <input name="city" type="text" placeholder="City" required />
-    <button type="submit">Join Now</button>
-  </form>
-</div>
+    <!-- Hidden iframe -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
 
+    <form 
+      action="https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjqojtrBsN3QE8IGk9w2jLElklWXWDZ-F-9PhCWDOXJH8la1KZbG5jYFyxRLsxbVPI8kkwGrhWN15hbMqZYrBH241MgorHpE51-j9rHv4gUbRB8yChFEZ2XA_JB_6yrRu6RqQat4-EA4GacXpi1NFQem3s0xRm73E61VQ0IuY-qDAa9BokAvbwpR4JWyMzzwuAwF-nhVtLSGVgg0ESlllRpQA8_g1JvXhAQ8vISRwA1qnxwlL_fs_8z_Nsv3yiWssCkJbb_trZ5iciNwjjgDIwrZd7HiA&lib=MmrfacZGZ8Wby8Oy-8UoaIrUz7p6ufxs_"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="handleSubmit()">
+
+      <input name="name" type="text" placeholder="Full Name" required />
+      <input name="mobile" type="tel" placeholder="Mobile Number" required />
+      <input name="city" type="text" placeholder="City" required />
+      <button id="submitBtn" type="submit">Join Now</button>
+    </form>
+
+    <div id="successMsg" style="display:none; margin-top:20px; color:#00c6ff;">
+      🎉 Thank you! Your details have been saved.
+    </div>
   </div>
+
+<script>
+function handleSubmit() {
+  document.getElementById("submitBtn").innerText = "Submitting...";
+  document.getElementById("submitBtn").disabled = true;
+
+  setTimeout(function() {
+    document.getElementById("successMsg").style.display = "block";
+    document.getElementById("submitBtn").style.display = "none";
+  }, 1000);
+}
+</script>
 </body>
+
 </html>
