@@ -24,7 +24,6 @@
       width: 100%;
       max-width: 420px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      animation: fadeUp 0.6s ease;
     }
 
     h1 {
@@ -48,10 +47,6 @@
       font-size: 16px;
     }
 
-    input:focus {
-      outline: 2px solid #7b2ff7;
-    }
-
     button {
       width: 100%;
       padding: 14px;
@@ -62,26 +57,6 @@
       color: white;
       cursor: pointer;
       background: linear-gradient(90deg,#7b2ff7,#00c6ff);
-      transition: 0.3s ease;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .message {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-      font-weight: 500;
-    }
-
-    .success { color: #00c6ff; }
-    .error { color: #ff4d4d; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -91,63 +66,17 @@
     <h1>Join HoaK as a Shopper</h1>
     <p>Be the first to experience personalised shopping.</p>
 
-    <form id="shopperForm">
+    <!-- DIRECT FORM POST -->
+    <form 
+      action="https://script.google.com/macros/s/AKfycbwGra3-NQgbwOV_XCVb8qtp66GgSWb0iGSUsDOQ1h5X9qWH0RFJz15YWifS2LPsZEg/exec" 
+      method="POST">
+
       <input name="name" type="text" placeholder="Full Name" required />
       <input name="mobile" type="tel" placeholder="Mobile Number" required />
       <input name="city" type="text" placeholder="City" required />
       <button type="submit">Join Now</button>
     </form>
 
-    <div id="successMsg" class="message success">
-      🎉 Thanks! Your information has been saved.
-    </div>
-
-    <div id="errorMsg" class="message error">
-      Something went wrong. Please try again.
-    </div>
   </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const form = document.getElementById("shopperForm");
-  const successMsg = document.getElementById("successMsg");
-  const errorMsg = document.getElementById("errorMsg");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
-
-    const formData = new FormData(form);
-
-    fetch("https://script.google.com/macros/s/AKfycbwGra3-NQgbwOV_XCVb8qtp66GgSWb0iGSUsDOQ1h5X9qWH0RFJz15YWifS2LPsZEg/exec", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => response.text())
-    .then(text => {
-      try {
-        const result = JSON.parse(text);
-        if (result.status === "success") {
-          form.reset();
-          successMsg.style.display = "block";
-        } else {
-          errorMsg.style.display = "block";
-        }
-      } catch {
-        errorMsg.style.display = "block";
-      }
-    })
-    .catch(() => {
-      errorMsg.style.display = "block";
-    });
-
-  });
-
-});
-</script>
-
 </body>
 </html>
