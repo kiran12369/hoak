@@ -69,35 +69,19 @@
       opacity: 0.9;
     }
 
-    button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .success {
+    .message {
       display: none;
       margin-top: 20px;
-      color: #00c6ff;
+      text-align: center;
       font-weight: 500;
-      text-align: center;
     }
 
-    .error {
-      display: none;
-      margin-top: 20px;
-      color: #ff4d4d;
-      text-align: center;
-    }
+    .success { color: #00c6ff; }
+    .error { color: #ff4d4d; }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -108,17 +92,17 @@
     <p>Be the first to experience personalised shopping.</p>
 
     <form id="shopperForm">
-      <input id="name" type="text" placeholder="Full Name" required />
-      <input id="mobile" type="tel" placeholder="Mobile Number" required />
-      <input id="city" type="text" placeholder="City" required />
-      <button id="submitBtn" type="submit">Join Now</button>
+      <input name="name" type="text" placeholder="Full Name" required />
+      <input name="mobile" type="tel" placeholder="Mobile Number" required />
+      <input name="city" type="text" placeholder="City" required />
+      <button type="submit">Join Now</button>
     </form>
 
-    <div class="success" id="successMsg">
-      🎉 Thanks! We saved your information.
+    <div id="successMsg" class="message success">
+      🎉 Thanks! Your information has been saved.
     </div>
 
-    <div class="error" id="errorMsg">
+    <div id="errorMsg" class="message error">
       Something went wrong. Please try again.
     </div>
   </div>
@@ -129,45 +113,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("shopperForm");
   const successMsg = document.getElementById("successMsg");
   const errorMsg = document.getElementById("errorMsg");
-  const submitBtn = document.getElementById("submitBtn");
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Submitting...";
+    successMsg.style.display = "none";
+    errorMsg.style.display = "none";
 
-    const data = {
-      name: document.getElementById("name").value.trim(),
-      mobile: document.getElementById("mobile").value.trim(),
-      city: document.getElementById("city").value.trim()
-    };
+    const formData = new FormData(form);
 
     fetch("https://script.google.com/macros/s/AKfycbwGra3-NQgbwOV_XCVb8qtp66GgSWb0iGSUsDOQ1h5X9qWH0RFJz15YWifS2LPsZEg/exec", {
       method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
+      body: formData
+    })
+    .then(response => response.text())
+    .then(text => {
+      try {
+        const result = JSON.parse(text);
+        if (result.status === "success") {
+          form.reset();
+          successMsg.style.display = "block";
+        } else {
+          errorMsg.style.display = "block";
+        }
+      } catch {
+        errorMsg.style.display = "block";
       }
     })
-    .then(response => response.json())
-    .then(result => {
-      if (result.status === "success") {
-        form.reset();
-        successMsg.style.display = "block";
-        errorMsg.style.display = "none";
-      } else {
-        throw new Error("Script error");
-      }
-    })
-    .catch(error => {
-      console.error(error);
+    .catch(() => {
       errorMsg.style.display = "block";
-      successMsg.style.display = "none";
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Join Now";
     });
 
   });
