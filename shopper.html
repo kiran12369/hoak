@@ -83,14 +83,21 @@
     <p>Be the first to experience personalised shopping.</p>
 
     <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="tel" placeholder="Mobile Number" required />
-      <input type="text" placeholder="City" required />
-      <button type="submit">Join Now</button>
-    </form>
+      <form id="shopperForm">
+  <input id="name" type="text" placeholder="Full Name" required />
+  <input id="mobile" type="tel" placeholder="Mobile Number" required />
+  <input id="city" type="text" placeholder="City" required />
+  <button type="submit">Join Now</button>
+</form>
+
   </div>
 <script>
 const form = document.getElementById("shopperForm");
+
+if (!form) {
+  alert("Form not found");
+}
+
 
 form.addEventListener("submit", function(e) {
   e.preventDefault();
