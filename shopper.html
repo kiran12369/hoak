@@ -2,101 +2,336 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Join as a Shopper | HoaK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join as a Shooper | HoaK</title>
+  <meta name="description" content="Sign up to become a HoaK Shooper — earn money by buying locally for buyers worldwide." />
+  <link rel="canonical" href="https://hoak.in/shopper.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
 
   <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #121520;
+      --gold: #d4b36a;
+      --gold-dark: #b8963a;
+      --text: #ffffff;
+      --muted: #9aa0b4;
+      --border: rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background: #0b0d12;
-      color: #ffffff;
       font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      padding: 40px 20px;
+      background: radial-gradient(ellipse 800px 400px at 50% 0%, #1a1626 0%, var(--bg) 65%);
+    }
+
+    .back-link {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      margin-bottom: 32px;
+      text-align: center;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold);
     }
 
     .card {
-      background: #121520;
-      padding: 40px;
-      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 44px;
       width: 100%;
-      max-width: 420px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      max-width: 460px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.45);
     }
 
-    h1 {
-      font-size: 28px;
+    .card-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(212, 179, 106, 0.12);
+      border: 1px solid rgba(212, 179, 106, 0.3);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .card h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
       margin-bottom: 8px;
+      line-height: 1.2;
     }
 
-    p {
-      color: #9aa0b4;
-      margin-bottom: 24px;
+    .card .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 7px;
     }
 
     input {
       width: 100%;
-      padding: 14px;
-      margin-bottom: 16px;
-      border-radius: 10px;
-      border: none;
-      background: #1b2030;
-      color: white;
-      font-size: 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    button {
+    input::placeholder {
+      color: #555c70;
+    }
+
+    input:focus {
+      border-color: rgba(212, 179, 106, 0.55);
+      box-shadow: 0 0 0 3px rgba(212, 179, 106, 0.1);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .submit-btn {
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       border-radius: 12px;
       border: none;
+      background: var(--gold);
+      color: #0b0d12;
       font-size: 16px;
-      font-weight: 600;
-      color: white;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
       cursor: pointer;
-      background: linear-gradient(90deg,#7b2ff7,#00c6ff);
+      margin-top: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: -0.2px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(212, 179, 106, 0.35);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .success-msg {
+      display: none;
+      margin-top: 28px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: rgba(212, 179, 106, 0.08);
+      border: 1px solid rgba(212, 179, 106, 0.25);
+      text-align: center;
+    }
+
+    .success-msg .success-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .success-msg p {
+      color: var(--gold);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .success-msg small {
+      color: var(--muted);
+      font-size: 13px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .perk {
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .perk::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 36px 24px;
+      }
+
+      .back-link {
+        top: 16px;
+        left: 16px;
+      }
     }
   </style>
 </head>
-
 <body>
+
+  <a href="index.html" class="back-link">← Back to HoaK</a>
+
+  <a href="index.html" class="logo">Hoa<span>K</span></a>
+
   <div class="card">
-    <h1>Join HoaK as a Shopper</h1>
-    <p>Be the first to experience personalised shopping.</p>
+    <div class="card-badge">Shooper Programme</div>
+    <h1>Join as a Shooper</h1>
+    <p class="subtitle">Earn money by buying locally for buyers worldwide. Set your own schedule and grow your profile.</p>
 
-    <!-- Hidden iframe -->
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <div class="perks">
+      <span class="perk">Earn commissions</span>
+      <span class="perk">Flexible hours</span>
+      <span class="perk">Secure payments</span>
+      <span class="perk">Build reputation</span>
+    </div>
 
-    <form 
-      action="https://script.google.com/macros/s/AKfycbwnqbZ-wyiEp3K5-UoyJTmd7cxVIeQSgRautY_WbnftvTZTFwJ6W4Qbq-3UMRTd1sA/exec"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="handleSubmit()">
+    <form
+      id="shooperForm"
+      action="https://formspree.io/f/xdkogpgr"
+      method="POST">
 
-      <input name="name" type="text" placeholder="Full Name" required />
-      <input name="mobile" type="tel" placeholder="Mobile Number" required />
-      <input name="city" type="text" placeholder="City" required />
-      <button id="submitBtn" type="submit">Join Now</button>
+      <input type="hidden" name="source" value="shooper-signup" />
+
+      <div class="field">
+        <label for="f-name">Full Name</label>
+        <input id="f-name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label for="f-email">Email Address</label>
+        <input id="f-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+      </div>
+
+      <div class="field">
+        <label for="f-phone">Phone Number</label>
+        <input id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" />
+      </div>
+
+      <div class="field">
+        <label for="f-city">City</label>
+        <input id="f-city" name="city" type="text" placeholder="Your city" required />
+      </div>
+
+      <button class="submit-btn" id="submitBtn" type="submit">Apply to Become a Shooper →</button>
     </form>
 
-    <div id="successMsg" style="display:none; margin-top:20px; color:#00c6ff;">
-      🎉 Thank you! Your details have been saved.
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">🎉</div>
+      <p>You're on the list!</p>
+      <small>We'll reach out once Shoopers go live in your city.</small>
     </div>
   </div>
 
 <script>
-function handleSubmit() {
-  document.getElementById("submitBtn").innerText = "Submitting...";
-  document.getElementById("submitBtn").disabled = true;
+  const form = document.getElementById('shooperForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successMsg = document.getElementById('successMsg');
 
-  setTimeout(function() {
-    document.getElementById("successMsg").style.display = "block";
-    document.getElementById("submitBtn").style.display = "none";
-  }, 1000);
-}
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    submitBtn.textContent = 'Submitting…';
+    submitBtn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        submitBtn.textContent = 'Try Again';
+        submitBtn.disabled = false;
+      }
+    } catch {
+      submitBtn.textContent = 'Try Again';
+      submitBtn.disabled = false;
+    }
+  });
 </script>
-</body>
 
+</body>
 </html>
