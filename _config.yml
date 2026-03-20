@@ -1,71 +1,105 @@
 # =========================
 # BASIC SITE SETTINGS
 # =========================
-locale: "en-IN"
-title: "HoaK"
-description: "HoaK – Smart personalised e-commerce platform made in India for India"
+locale:      "en-IN"
+title:       "HoaK – Buy Anything From Anywhere"
+title_short: "HoaK"
+description: >
+  HoaK connects you with verified local Shoopers who buy from any market,
+  bazaar, or store and ship directly to you — anywhere in India or worldwide.
+  Personal shoppers. Global delivery. Built in India.
 baseurl: ""
-url: "https://hoak.in"   # change when domain is final
+url:     "https://hoak.in"
 timezone: Asia/Kolkata
 encoding: "utf-8"
 
 # =========================
 # BRANDING
 # =========================
-name: "HoaK"
-logo: "/images/HoaK.jpeg"
+name:   "HoaK"
+logo:   "/images/HoaK.jpeg"
 
 # =========================
 # AUTHOR / FOUNDER
 # =========================
 author:
-  name: "Ravikiran"
-  bio: "Founder & CEO at HoaK"
+  name:   "Ravikiran"
+  bio:    "Founder & CEO at HoaK — building the future of local-to-global shopping."
   avatar: "/images/HoaK.jpeg"
-  email: "thehoak@outlook.com"
+  email:  "contact@hoak.in"
 
-# Disable sidebar author clutter
 display_author: false
 
 # =========================
 # THEME / LAYOUT
 # =========================
-site_theme: "default"
 breadcrumbs: false
-read_more: "disabled"
-future: true
+read_more:   "disabled"
+future:      true
 
 # =========================
-# SEO
+# SEO — fill in after verification
 # =========================
-google_site_verification:
-bing_site_verification:
-og_image: "/images/HoaK.jpeg"
+# Get Google verification at: https://search.google.com/search-console
+# Get Bing verification at:   https://www.bing.com/webmasters
+google_site_verification: ""
+bing_site_verification:   ""
+
+# Open Graph default image (1200×630 recommended)
+og_image:    "/images/og-hoak.png"
+og_image_alt: "HoaK – Buy Anything From Anywhere"
 
 # =========================
-# SOCIAL (optional – add later)
+# SOCIAL
 # =========================
 social:
   type: Organization
   name: HoaK
-  links: []
+  links:
+    # Add handles when accounts are created:
+    # - "https://twitter.com/hoak_in"
+    # - "https://instagram.com/hoak_in"
+    # - "https://linkedin.com/company/hoak"
+
+# Twitter / X
+twitter:
+  username: "hoak_in"
 
 # =========================
-# ANALYTICS (add later)
+# ANALYTICS
 # =========================
 analytics:
   provider: false
+  # Uncomment and fill in when ready:
+  # provider: "google-gtag"
+  # google:
+  #   tracking_id: "G-XXXXXXXXXX"
+  #   anonymize_ip: true
 
 # =========================
 # MARKDOWN / BUILD
 # =========================
-markdown: kramdown
+markdown:    kramdown
 highlighter: rouge
 
 kramdown:
-  input: GFM
-  auto_ids: true
+  input:        GFM
+  auto_ids:     true
   smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# =========================
+# PERFORMANCE
+# =========================
+compress_html:
+  clippings:  all
+  comments:   all
+  endings:    all
+  startings:  []
+  blanklines: false
+  profile:    false
 
 # =========================
 # FILE HANDLING
@@ -74,6 +108,7 @@ include:
   - _pages
   - images
   - files
+  - "*.html"    # include index.html, shopper.html etc.
 
 exclude:
   - node_modules
@@ -83,6 +118,12 @@ exclude:
   - README.md
   - package.json
   - package-lock.json
+  - CONTRIBUTING.md
+  - Dockerfile
+  - docker-compose.yaml
+  - .devcontainer
+  - scripts
+  - markdown_generator
 
 # =========================
 # PERMALINKS
@@ -97,9 +138,10 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
+      layout:         single
       author_profile: false
-      sidebar: false
+      sidebar:        false
+      comments:       false
 
 # =========================
 # PLUGINS (GitHub Pages safe)
@@ -107,5 +149,17 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
   - jemoji
 
+# jekyll-feed config
+feed:
+  title:       "HoaK Blog"
+  description: "Updates from HoaK — the personal shopping platform built in India."
+
+# =========================
+# SITEMAP
+# =========================
+# jekyll-sitemap is automatic. To exclude a page from the sitemap, add:
+# sitemap: false
+# to that page's front matter.

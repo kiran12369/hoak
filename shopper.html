@@ -1,337 +1,737 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join as a Shooper | HoaK</title>
-  <meta name="description" content="Sign up to become a HoaK Shooper — earn money by buying locally for buyers worldwide." />
+
+  <!-- ═══════════════════════════════════════
+       PRIMARY SEO
+  ═══════════════════════════════════════ -->
+  <title>Join as a Shooper – Earn Money Shopping Locally | HoaK</title>
+  <meta name="description" content="Become a HoaK Shooper and earn commissions by buying locally for buyers worldwide. Set your own schedule, work from your city, and get paid securely. Apply now." />
+  <meta name="keywords" content="HoaK Shooper, earn money shopping, personal shopper job India, work from home shopping, local shopper gig, flexible income India, hoak.in shooper" />
+  <meta name="author" content="HoaK" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#07080d" />
   <link rel="canonical" href="https://hoak.in/shopper.html" />
 
+  <!-- ═══════════════════════════════════════
+       OPEN GRAPH
+  ═══════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hoak.in/shopper.html" />
+  <meta property="og:title" content="Join as a Shooper – Earn Money Shopping Locally | HoaK" />
+  <meta property="og:description" content="Become a HoaK Shooper and earn commissions by buying locally for global buyers. Free to join. Flexible hours. Secure payouts." />
+  <meta property="og:image" content="https://hoak.in/images/og-shooper.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="HoaK" />
+
+  <!-- ═══════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@hoak_in" />
+  <meta name="twitter:title" content="Join as a HoaK Shooper – Earn from Your Neighbourhood" />
+  <meta name="twitter:description" content="Shop locally for global buyers and earn commissions. Flexible, free to join, secure payments." />
+  <meta name="twitter:image" content="https://hoak.in/images/og-shooper.png" />
+
+  <!-- ═══════════════════════════════════════
+       STRUCTURED DATA
+  ═══════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://hoak.in/shopper.html#webpage",
+        "url": "https://hoak.in/shopper.html",
+        "name": "Join as a Shooper – Earn Money Shopping Locally | HoaK",
+        "description": "Apply to become a HoaK Shooper and earn commissions by purchasing items from local markets for buyers worldwide.",
+        "isPartOf": { "@id": "https://hoak.in/#website" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://hoak.in/"},
+            {"@type":"ListItem","position":2,"name":"Join as Shooper","item":"https://hoak.in/shopper.html"}
+          ]
+        }
+      },
+      {
+        "@type": "JobPosting",
+        "title": "HoaK Shooper",
+        "description": "Become a HoaK Shooper and earn commissions by purchasing items from local markets for buyers worldwide. Set your own schedule, build your reputation, and get paid securely.",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "HoaK",
+          "sameAs": "https://hoak.in"
+        },
+        "jobLocationType": "TELECOMMUTE",
+        "applicantLocationRequirements": {"@type": "Country","name": "India"},
+        "employmentType": "CONTRACTOR",
+        "datePosted": "2025-01-01",
+        "validThrough": "2026-12-31"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #0b0d12;
-      --card: #121520;
-      --gold: #d4b36a;
-      --gold-dark: #b8963a;
-      --text: #ffffff;
-      --muted: #9aa0b4;
-      --border: rgba(255,255,255,0.07);
+      --bg:     #07080d;
+      --surface:#0e1018;
+      --card:   #111420;
+      --card2:  #161b2a;
+      --gold:   #c8a96e;
+      --gold-lt:#e0c48a;
+      --gold-dk:#9e7c44;
+      --text:   #f0f2f8;
+      --sub:    #8b92ab;
+      --border: rgba(255,255,255,0.06);
+      --border2:rgba(200,169,110,0.2);
+      --r-sm:   12px;
+      --r-md:   18px;
+      --r-lg:   28px;
+      --green:  #4caf50;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── BACK LINK ── */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      background: radial-gradient(ellipse 800px 400px at 50% 0%, #1a1626 0%, var(--bg) 65%);
+      justify-content: space-between;
+      padding: 0 32px;
+      backdrop-filter: blur(18px);
+      background: rgba(7,8,13,0.8);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
     }
 
     .back-link {
-      position: fixed;
-      top: 24px;
-      left: 24px;
-      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--sub);
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
       transition: color 0.2s;
     }
-
-    .back-link:hover {
-      color: var(--text);
-    }
+    .back-link:hover { color: var(--text); }
 
     .logo {
-      font-weight: 900;
-      font-size: 22px;
-      letter-spacing: -0.5px;
-      margin-bottom: 32px;
-      text-align: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
       color: var(--text);
       text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo em { font-style: normal; color: var(--gold); }
+
+    /* ── LAYOUT ── */
+    .page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
     }
 
-    .logo span {
-      color: var(--gold);
+    /* Left panel — info */
+    .left {
+      padding: 120px 56px 80px;
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+      background: linear-gradient(160deg, var(--surface) 0%, var(--bg) 100%);
+    }
+    .left-glow {
+      position: absolute;
+      top: 0; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse at center, rgba(200,169,110,0.07) 0%, transparent 60%);
+      pointer-events: none;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 48px 44px;
-      width: 100%;
-      max-width: 460px;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.45);
-    }
-
-    .card-badge {
-      display: inline-block;
-      padding: 5px 14px;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
       border-radius: 999px;
-      background: rgba(212, 179, 106, 0.12);
-      border: 1px solid rgba(212, 179, 106, 0.3);
+      background: rgba(200,169,110,0.1);
+      border: 1px solid var(--border2);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.14em;
-      color: var(--gold);
+      letter-spacing: 0.16em;
+      color: var(--gold-lt);
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
 
-    .card h1 {
-      font-size: 26px;
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
       font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-      line-height: 1.2;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 18px;
     }
+    h1 em { font-style: normal; color: var(--gold); }
 
-    .card .subtitle {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 36px;
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-
-    label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 7px;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      font-size: 15px;
-      font-family: 'Inter', sans-serif;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    input::placeholder {
-      color: #555c70;
-    }
-
-    input:focus {
-      border-color: rgba(212, 179, 106, 0.55);
-      box-shadow: 0 0 0 3px rgba(212, 179, 106, 0.1);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 16px;
-      border-radius: 12px;
-      border: none;
-      background: var(--gold);
-      color: #0b0d12;
+    .tagline {
       font-size: 16px;
+      color: var(--sub);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 44px;
+    }
+
+    /* Perks */
+    .perks-title {
+      font-size: 11px;
       font-weight: 700;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: -0.2px;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(212, 179, 106, 0.35);
-    }
-
-    .submit-btn:active {
-      transform: translateY(0);
-    }
-
-    .submit-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .success-msg {
-      display: none;
-      margin-top: 28px;
-      padding: 18px 20px;
-      border-radius: 12px;
-      background: rgba(212, 179, 106, 0.08);
-      border: 1px solid rgba(212, 179, 106, 0.25);
-      text-align: center;
-    }
-
-    .success-msg .success-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .success-msg p {
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
       color: var(--gold);
-      font-size: 15px;
-      font-weight: 600;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-
-    .success-msg small {
-      color: var(--muted);
-      font-size: 13px;
+    .perks-title::before {
+      content: '';
       display: block;
-      margin-top: 4px;
+      width: 16px; height: 1px;
+      background: var(--gold-dk);
     }
 
     .perks {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 32px;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 44px;
+    }
+    .perk {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .perk:hover {
+      border-color: var(--border2);
+      background: var(--card2);
+    }
+    .perk-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .perk-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .perk-text span {
+      font-size: 13px;
+      color: var(--sub);
+      font-weight: 300;
     }
 
-    .perk {
-      font-size: 12px;
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
+    /* Mini stats */
+    .mini-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .mini-stat {}
+    .mini-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -1px;
+    }
+    .mini-num span { color: var(--gold); }
+    .mini-label { font-size: 11px; color: var(--sub); margin-top: 2px; }
+
+    /* ── RIGHT PANEL — FORM ── */
+    .right {
+      padding: 120px 56px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--bg);
+      position: relative;
+    }
+    .right-glow {
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 400px; height: 400px;
+      background: radial-gradient(ellipse at center, rgba(100,80,200,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .form-wrap {
+      max-width: 440px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 8px;
+    }
+    .form-sub {
+      color: var(--sub);
+      font-size: 14px;
+      margin-bottom: 32px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* Form fields */
+    .field { margin-bottom: 14px; }
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin-bottom: 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: var(--r-sm);
       border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 5px 12px;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: #454b60; }
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(200,169,110,0.5);
+      box-shadow: 0 0 0 3px rgba(200,169,110,0.07);
+      background: rgba(255,255,255,0.05);
+    }
+    select { cursor: pointer; }
+    select option { background: var(--card2); color: var(--text); }
+    textarea { resize: vertical; min-height: 80px; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--r-sm);
+      border: none;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      letter-spacing: -0.2px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(200,169,110,0.3);
+    }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--sub);
+      margin-top: 12px;
+      font-weight: 300;
+      line-height: 1.5;
     }
 
-    .perk::before {
-      content: '✓';
-      color: var(--gold);
+    /* ── SUCCESS STATE ── */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .success-state.show { display: block; }
+    .success-icon-wrap {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(76,175,80,0.1);
+      border: 1px solid rgba(76,175,80,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 24px;
+    }
+    .success-state h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
       font-weight: 700;
-      font-size: 11px;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .success-state p {
+      color: var(--sub);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 340px;
+      margin: 0 auto 28px;
+    }
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--r-sm);
+      background: var(--card2);
+      border: 1px solid var(--border2);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .back-home-btn:hover { background: rgba(200,169,110,0.1); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+      .left {
+        padding: 90px 28px 60px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .right {
+        padding: 60px 28px 80px;
+      }
+      .topbar { padding: 0 20px; }
+      .form-wrap { max-width: 100%; }
+      .field-row { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 500px) {
-      .card {
-        padding: 36px 24px;
-      }
-
-      .back-link {
-        top: 16px;
-        left: 16px;
-      }
+    @media (max-width: 480px) {
+      h1 { letter-spacing: -1px; }
     }
   </style>
 </head>
+
 <body>
 
-  <a href="index.html" class="back-link">← Back to HoaK</a>
-
-  <a href="index.html" class="logo">Hoa<span>K</span></a>
-
-  <div class="card">
-    <div class="card-badge">Shooper Programme</div>
-    <h1>Join as a Shooper</h1>
-    <p class="subtitle">Earn money by buying locally for buyers worldwide. Set your own schedule and grow your profile.</p>
-
-    <div class="perks">
-      <span class="perk">Earn commissions</span>
-      <span class="perk">Flexible hours</span>
-      <span class="perk">Secure payments</span>
-      <span class="perk">Build reputation</span>
-    </div>
-
-    <form
-      id="shooperForm"
-      action="https://formspree.io/f/xgonlnaj"
-      method="POST">
-
-      <input type="hidden" name="source" value="shooper-signup" />
-
-      <div class="field">
-        <label for="f-name">Full Name</label>
-        <input id="f-name" name="name" type="text" placeholder="Your full name" required autocomplete="name" />
-      </div>
-
-      <div class="field">
-        <label for="f-email">Email Address</label>
-        <input id="f-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
-      </div>
-
-      <div class="field">
-        <label for="f-phone">Phone Number</label>
-        <input id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" />
-      </div>
-
-      <div class="field">
-        <label for="f-city">City</label>
-        <input id="f-city" name="city" type="text" placeholder="Your city" required />
-      </div>
-
-      <button class="submit-btn" id="submitBtn" type="submit">Apply to Become a Shooper →</button>
-    </form>
-
-    <div class="success-msg" id="successMsg">
-      <div class="success-icon">🎉</div>
-      <p>You're on the list!</p>
-      <small>We'll reach out once Shoopers go live in your city.</small>
-    </div>
+  <!-- ── TOP BAR ── -->
+  <div class="topbar">
+    <a href="index.html" class="back-link" aria-label="Back to HoaK homepage">
+      ← Back to HoaK
+    </a>
+    <a href="index.html" class="logo">Hoa<em>K</em></a>
+    <div style="width:120px"></div><!-- spacer for centering -->
   </div>
 
-<script>
-  const form = document.getElementById('shooperForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const successMsg = document.getElementById('successMsg');
+  <!-- ── MAIN ── -->
+  <main class="page">
 
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    submitBtn.textContent = 'Submitting…';
-    submitBtn.disabled = true;
+    <!-- LEFT: Info Panel -->
+    <aside class="left" aria-label="Why become a Shooper">
+      <div class="left-glow" aria-hidden="true"></div>
 
-    try {
-      const data = new FormData(form);
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+      <div class="pill">Shooper Programme</div>
+
+      <h1>Earn from your<br><em>Neighbourhood</em></h1>
+
+      <p class="tagline">
+        Turn your local market access into a steady income stream. Shop locally for buyers worldwide — on your own schedule, at your own pace.
+      </p>
+
+      <p class="perks-title">What you get</p>
+
+      <div class="perks">
+        <div class="perk">
+          <span class="perk-icon" aria-hidden="true">💰</span>
+          <div class="perk-text">
+            <strong>Earn Commissions</strong>
+            <span>Get paid on every order you fulfil. The more you shop, the more you earn.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <span class="perk-icon" aria-hidden="true">🕐</span>
+          <div class="perk-text">
+            <strong>Flexible Hours</strong>
+            <span>Work whenever it suits you. Accept orders around your existing commitments.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <span class="perk-icon" aria-hidden="true">🔒</span>
+          <div class="perk-text">
+            <strong>Secure Payouts</strong>
+            <span>Payments processed directly to your account. Fast, safe, and transparent.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <span class="perk-icon" aria-hidden="true">⭐</span>
+          <div class="perk-text">
+            <strong>Build Your Reputation</strong>
+            <span>Grow your verified Shooper profile and unlock higher-value orders over time.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <span class="perk-icon" aria-hidden="true">🆓</span>
+          <div class="perk-text">
+            <strong>Completely Free to Join</strong>
+            <span>No fees, no investment required. Just sign up and start shopping for others.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mini-stats">
+        <div class="mini-stat">
+          <div class="mini-num">500<span>+</span></div>
+          <div class="mini-label">Cities Planned</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-num">0<span>%</span></div>
+          <div class="mini-label">Platform Fee</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-num">∞</div>
+          <div class="mini-label">Earning Potential</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Form Panel -->
+    <section class="right" aria-label="Shooper registration form">
+      <div class="right-glow" aria-hidden="true"></div>
+
+      <!-- FORM -->
+      <div class="form-wrap" id="formWrap">
+        <h2 class="form-title">Apply to Become a Shooper</h2>
+        <p class="form-sub">Join the waitlist. We'll reach out when Shoopers go live in your city — usually within 48 hours.</p>
+
+        <form id="shooperForm" action="https://formspree.io/f/xgonlnaj" method="POST" novalidate>
+          <input type="hidden" name="source" value="shooper-signup-page" />
+          <input type="hidden" name="_subject" value="New HoaK Shooper Application" />
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-fname">First Name *</label>
+              <input id="f-fname" name="first_name" type="text" placeholder="Ravi" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="f-lname">Last Name *</label>
+              <input id="f-lname" name="last_name" type="text" placeholder="Kumar" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email Address *</label>
+            <input id="f-email" name="email" type="email" placeholder="ravi@example.com" required autocomplete="email" />
+          </div>
+
+          <div class="field">
+            <label for="f-phone">Phone Number</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-city">City *</label>
+              <input id="f-city" name="city" type="text" placeholder="Hyderabad" required autocomplete="address-level2" />
+            </div>
+            <div class="field">
+              <label for="f-state">State *</label>
+              <select id="f-state" name="state" required>
+                <option value="" disabled selected>Select state</option>
+                <option>Andhra Pradesh</option>
+                <option>Delhi</option>
+                <option>Gujarat</option>
+                <option>Karnataka</option>
+                <option>Kerala</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Tamil Nadu</option>
+                <option>Telangana</option>
+                <option>Uttar Pradesh</option>
+                <option>West Bengal</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-markets">What markets or stores are near you?</label>
+            <input id="f-markets" name="nearby_markets" type="text" placeholder="e.g. Laad Bazaar, Jubilee Hills, Phoenix Mall…" />
+          </div>
+
+          <div class="field">
+            <label for="f-hours">Hours available per week</label>
+            <select id="f-hours" name="hours_per_week">
+              <option value="" disabled selected>Select availability</option>
+              <option>1–5 hours</option>
+              <option>5–10 hours</option>
+              <option>10–20 hours</option>
+              <option>20+ hours (full time)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-note">Anything else you'd like to share?</label>
+            <textarea id="f-note" name="note" placeholder="Optional — tell us a bit about yourself or the markets you have access to…"></textarea>
+          </div>
+
+          <button class="submit-btn" id="submitBtn" type="submit">
+            <span id="btnText">Apply to Become a Shooper →</span>
+          </button>
+        </form>
+
+        <p class="form-note">
+          🔒 Your data is secure and will never be shared with third parties.<br>
+          By applying you agree to our <a href="#" style="color:var(--gold-lt);text-decoration:none;">Terms</a> &amp; <a href="#" style="color:var(--gold-lt);text-decoration:none;">Privacy Policy</a>.
+        </p>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success-state" id="successState" aria-live="polite">
+        <div class="success-icon-wrap" aria-hidden="true">🎉</div>
+        <h2>You're on the list!</h2>
+        <p>Thanks for applying! We'll reach out as soon as the Shooper programme launches in your city. Keep an eye on your inbox.</p>
+        <a href="index.html" class="back-home-btn">← Back to HoaK</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('shooperForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const formWrap = document.getElementById('formWrap');
+    const successState = document.getElementById('successState');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Client-side validation
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(f => {
+        if (!f.value.trim()) {
+          f.style.borderColor = 'rgba(255,80,80,0.6)';
+          valid = false;
+        } else {
+          f.style.borderColor = '';
+        }
       });
+      if (!valid) return;
 
-      if (res.ok) {
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      } else {
-        submitBtn.textContent = 'Try Again';
+      btnText.textContent = 'Submitting…';
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (res.ok) {
+          formWrap.style.opacity = '0';
+          formWrap.style.transform = 'translateY(12px)';
+          formWrap.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          setTimeout(() => {
+            formWrap.style.display = 'none';
+            successState.classList.add('show');
+            successState.style.animation = 'fadeIn 0.4s ease forwards';
+          }, 300);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        btnText.textContent = 'Something went wrong — try again';
+        submitBtn.style.background = '#c0392b';
         submitBtn.disabled = false;
+        setTimeout(() => {
+          btnText.textContent = 'Apply to Become a Shooper →';
+          submitBtn.style.background = '';
+        }, 3000);
       }
-    } catch {
-      submitBtn.textContent = 'Try Again';
-      submitBtn.disabled = false;
-    }
-  });
-</script>
+    });
 
+    // Clear red borders on input
+    form.querySelectorAll('input, select, textarea').forEach(f => {
+      f.addEventListener('input', () => { f.style.borderColor = ''; });
+    });
+
+    const style = document.createElement('style');
+    style.textContent = '@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}';
+    document.head.appendChild(style);
+  </script>
 </body>
 </html>
