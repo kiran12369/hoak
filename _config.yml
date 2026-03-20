@@ -40,7 +40,7 @@ future:      true
 # =========================
 # SEO — fill in after verification
 # =========================
-# Get Google verification at: https://search.google.com/search-console
+# google_site_verification: "google5de36a46174c586b"
 # Get Bing verification at:   https://www.bing.com/webmasters
 google_site_verification: ""
 bing_site_verification:   ""
