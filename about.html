@@ -9,7 +9,7 @@
   <meta property="og:title" content="About HoaK – Our Story & Mission" /><meta property="og:url" content="https://thehoak.com/about.html" /><meta property="og:type" content="website" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About HoaK","description":"HoaK is a personal shopping marketplace built in India, connecting buyers with verified local Shoopers for cross-border commerce.","mainEntity":{"@type":"Organization","name":"HoaK Technologies","founder":{"@type":"Person","name":"Ravikiran","jobTitle":"Founder & CEO"},"foundingDate":"2025","foundingLocation":"India"}}</script>
   <style>
-    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 64px; align-items: center; }
     @media (max-width: 768px) { .mission-grid { grid-template-columns: 1fr; } }
     .mission-visual { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; }
     .value-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
@@ -94,7 +94,7 @@ input, textarea, select { font-family: inherit; }
 .eyebrow-dot { width: 6px; height: 6px; background: var(--brand); border-radius: 50%; animation: blink 2s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-.section-heading { font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin-bottom: 14px; }
+.section-heading { font-size: clamp(24px, 5vw, 44px); font-weight: 800; margin-bottom: 14px; }
 .section-sub { font-size: 18px; color: var(--ink-2); line-height: 1.65; max-width: 560px; }
 
 .badge {
@@ -184,13 +184,13 @@ input, textarea, select { font-family: inherit; }
   padding: 64px 0;
   text-align: center;
 }
-.page-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; margin-bottom: 16px; }
+.page-hero h1 { font-size: clamp(24px, 5vw, 52px); font-weight: 800; margin-bottom: 16px; }
 .page-hero p { font-size: 18px; color: var(--ink-2); max-width: 560px; margin: 0 auto; }
 
 /* ── FOOTER ── */
 .footer { background: var(--ink); color: rgba(255,255,255,0.65); padding: 72px 0 36px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 32px; } }
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-logo { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; text-decoration: none; display: inline-block; margin-bottom: 14px; }
 .footer-logo .o { color: var(--brand); }
@@ -286,6 +286,378 @@ input, textarea, select { font-family: inherit; }
   .section-sub { font-size: 16px; }
 }
   </style>
+
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   HOAK FLUID RESPONSIVE SYSTEM
+   Auto-adapts: phone → phablet → tablet → laptop → desktop
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── FLUID BASE ── */
+html { font-size: clamp(14px, 1.5vw, 16px); }
+*, *::before, *::after { box-sizing: border-box; }
+img, video { max-width: 100%; height: auto; }
+
+/* ── FLUID CONTAINER ── */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+
+/* ── FLUID SECTION PADDING ── */
+.section-pad { padding: clamp(48px, 8vw, 96px) 0; }
+.section-pad-sm { padding: clamp(32px, 5vw, 64px) 0; }
+
+/* ── FLUID TYPOGRAPHY ── */
+.section-heading {
+  font-size: clamp(22px, 4vw, 44px) !important;
+  line-height: 1.15;
+  letter-spacing: clamp(-0.5px, -0.05vw, -0.3px);
+}
+.section-sub {
+  font-size: clamp(15px, 2vw, 18px) !important;
+  line-height: 1.65;
+}
+.page-hero h1 {
+  font-size: clamp(26px, 5vw, 52px) !important;
+}
+.page-hero p {
+  font-size: clamp(15px, 2vw, 18px) !important;
+}
+
+/* ── FLUID NAV ── */
+.nav { height: clamp(56px, 8vw, 68px); }
+.nav-logo { font-size: clamp(18px, 3vw, 24px); }
+
+/* ── FLUID HERO ── */
+.hero { padding: clamp(40px, 7vw, 80px) 0 clamp(40px, 6vw, 72px); }
+.hero h1 {
+  font-size: clamp(28px, 6vw, 64px) !important;
+  line-height: 1.06;
+  letter-spacing: clamp(-0.5px, -0.1vw, -1.5px);
+}
+.hero-desc {
+  font-size: clamp(15px, 2vw, 18px) !important;
+  line-height: 1.65;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+/* Hide phone mockup on smaller screens — saves space */
+@media (max-width: 900px) { .hero-visual { display: none; } }
+
+/* ── FLUID HERO STATS ── */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 36px);
+}
+.hero-stat-num { font-size: clamp(20px, 3vw, 28px); }
+.hero-stat-lbl { font-size: clamp(11px, 1.2vw, 13px); }
+
+/* ── FLUID HERO FORM ── */
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 440px;
+}
+.inline-form .form-input {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.inline-form .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .inline-form { flex-direction: column; }
+  .inline-form .btn { width: 100%; }
+}
+
+/* ── FLUID PROOF STRIP ── */
+.proof-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(16px, 3vw, 24px);
+}
+@media (max-width: 500px) {
+  .proof-inner { flex-direction: column; align-items: flex-start; }
+  .proof-sep { display: none; }
+}
+
+/* ── FLUID STEPS GRID ── */
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+/* ── FLUID WHY GRID ── */
+.why-grid-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+/* ── FLUID TESTIMONIALS ── */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+/* ── FLUID CTA BAND ── */
+.cta-band { padding: clamp(48px, 8vw, 80px) 0; }
+.cta-band h2 {
+  font-size: clamp(22px, 4vw, 44px) !important;
+  margin-bottom: clamp(10px, 1.5vw, 14px);
+}
+.cta-band p { font-size: clamp(14px, 1.8vw, 17px); }
+.cta-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 440px;
+  margin: 0 auto clamp(8px, 1vw, 12px);
+}
+.cta-form input { flex: 1 1 180px; min-width: 0; }
+.cta-form button { flex: 0 0 auto; white-space: nowrap; }
+@media (max-width: 420px) {
+  .cta-form { flex-direction: column; }
+  .cta-form button { width: 100%; }
+}
+
+/* ── FLUID CITY STRIP ── */
+.city-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 12px);
+}
+@media (max-width: 500px) {
+  .city-scroll { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+  .city-pill { flex-shrink: 0; scroll-snap-align: start; }
+}
+
+/* ── FLUID SHOOPER DARK SECTION ── */
+.shooper-dark-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
+  gap: clamp(32px, 5vw, 64px) !important;
+  align-items: center !important;
+}
+.shooper-dark-grid .shooper-stats-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: clamp(12px, 2vw, 16px);
+}
+
+/* ── FLUID FOOTER ── */
+.footer { padding: clamp(48px, 7vw, 72px) 0 clamp(24px, 3vw, 36px); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: clamp(24px, 4vw, 48px);
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+@media (max-width: 400px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 16px);
+}
+@media (max-width: 480px) {
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ── FLUID BUTTONS ── */
+.btn {
+  font-size: clamp(13px, 1.5vw, 15px);
+  padding: clamp(10px, 1.5vw, 14px) clamp(18px, 2.5vw, 28px);
+}
+.btn-lg {
+  font-size: clamp(14px, 1.6vw, 16px);
+  padding: clamp(12px, 1.8vw, 16px) clamp(22px, 3vw, 36px);
+}
+.btn-sm {
+  font-size: clamp(12px, 1.3vw, 13px);
+  padding: clamp(8px, 1.2vw, 10px) clamp(14px, 1.8vw, 20px);
+}
+
+/* ── HOW IT WORKS PAGE ── */
+.big-steps { gap: clamp(48px, 7vw, 80px); }
+.big-step {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+.big-step.reverse { direction: ltr !important; }
+.step-number { font-size: clamp(56px, 8vw, 96px); }
+.step-content h2 { font-size: clamp(22px, 3.5vw, 32px); }
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: clamp(14px, 2vw, 20px);
+}
+.escrow-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+}
+@media (max-width: 640px) {
+  .escrow-flow { flex-direction: column; }
+  .escrow-arrow { transform: rotate(90deg); text-align: center; padding: 2px 0; }
+  .escrow-step { width: 100%; }
+}
+
+/* ── PRICING PAGE ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  margin-top: clamp(32px, 5vw, 56px);
+}
+.p-card.featured { transform: none; }
+@media (min-width: 900px) { .p-card.featured { transform: scale(1.03); } }
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+/* ── WHY HOAK PAGE ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+}
+.compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.compare-table { min-width: 560px; }
+.compare-table th, .compare-table td {
+  padding: clamp(8px, 1.5vw, 16px) clamp(10px, 1.5vw, 20px);
+  font-size: clamp(11px, 1.3vw, 14px);
+}
+
+/* ── FOR SHOOPERS PAGE ── */
+.shooper-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+.shooper-hero { padding: clamp(48px, 7vw, 80px) 0; }
+.shooper-hero h1 { font-size: clamp(26px, 5vw, 56px) !important; }
+.shooper-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: clamp(10px, 1.5vw, 16px);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: clamp(14px, 2vw, 20px);
+}
+
+/* ── ABOUT PAGE ── */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(32px, 5vw, 60px);
+  align-items: center;
+}
+.founder-section { padding: clamp(28px, 4vw, 48px); }
+.founder-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(20px, 3vw, 32px);
+  align-items: start;
+}
+@media (max-width: 400px) {
+  .founder-grid { grid-template-columns: 1fr; }
+}
+
+/* ── FAQ PAGE ── */
+.faq-layout {
+  display: grid;
+  grid-template-columns: clamp(160px, 20vw, 240px) 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-nav { display: none; }
+}
+.faq-btn { font-size: clamp(14px, 1.8vw, 16px); padding: clamp(16px, 2vw, 22px) 0; }
+
+/* ── LEGAL PAGES ── */
+.legal-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 60px) clamp(16px, 4vw, 24px) clamp(60px, 8vw, 100px);
+}
+.legal-body h1 { font-size: clamp(26px, 4vw, 40px) !important; }
+.legal-body h2 { font-size: clamp(17px, 2.5vw, 20px) !important; }
+.legal-body p, .legal-body li { font-size: clamp(14px, 1.8vw, 16px); }
+.legal-table-wrap { overflow-x: auto; }
+.legal-body table { min-width: 480px; }
+
+/* ── CARDS FLUID PADDING ── */
+.card, .card-flat { padding: clamp(18px, 2.5vw, 28px); }
+.step-card { padding: clamp(20px, 3vw, 32px); }
+.why-card-home { padding: clamp(16px, 2vw, 24px); }
+.testi-card { padding: clamp(18px, 2.5vw, 28px); }
+.feature-card { padding: clamp(18px, 2.5vw, 28px); }
+
+/* ── PAGE HERO ── */
+.page-hero { padding: clamp(36px, 6vw, 64px) 0; }
+
+/* ── OVERFLOW GUARD ── */
+body { overflow-x: hidden; }
+.container { overflow-x: clip; }
+
+/* ── MOBILE NAV HAMBURGER ── */
+@media (max-width: 900px) {
+  .nav-links, .nav-actions { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (min-width: 901px) {
+  .nav-hamburger { display: none; }
+  .mobile-menu { display: none !important; }
+}
+</style>
 </head>
 <body>
 <header>
@@ -351,7 +723,7 @@ input, textarea, select { font-family: inherit; }
   </div></section>
 
   <section style="background:var(--brand);padding:72px 0;"><div class="container" style="text-align:center;">
-    <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;color:white;margin-bottom:14px;">Join us on this journey</h2>
+    <h2 style="font-size:clamp(22px,5vw,40px);font-weight:800;color:white;margin-bottom:14px;">Join us on this journey</h2>
     <p style="font-size:17px;color:rgba(255,255,255,0.85);margin-bottom:32px;">Be among the first to experience HoaK when we launch.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
       <a href="index.html#waitlist" class="btn btn-white btn-lg">Join Waitlist →</a>
